@@ -82,9 +82,18 @@ router.beforeResolve(async () => {
 
 ## Compatibility
 
-`vue-view-transitions` uses View Transitions API under the hood. Currently, View Transitions API is only availble in Chrome 111+. If you need a more compatible solution, use [vue-starport](https://github.com/antfu/vue-starport) or [nuxt transitions](https://nuxt.com/docs/getting-started/transitions).
+### Vue 2
+`vue-view-transitions` supports vue 2.6 or above. You should use `ViewTransitionsLegacyPlugin` instead of `ViewTransitionsPlugin` in Vue 2 project.
 
-[Compatibility](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility)
+```js
+import { ViewTransitionsLegacyPlugin } from 'vue-view-transitions'
+
+Vue.use(ViewTransitionsLegacyPlugin())
+```
+
+### Browser Compatibility
+`vue-view-transitions` uses View Transitions API under the hood. Currently, View Transitions API is only availble in Chrome 111+. If you need a more compatible solution, use [vue-starport](https://github.com/antfu/vue-starport), or [nuxt transitions](https://nuxt.com/docs/getting-started/transitions) if you are using Nuxt. ([Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility))
+
 
 ## Reference
 
