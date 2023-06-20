@@ -5,7 +5,7 @@
   "author": "Aaron Zhou",
   "packageManager": "pnpm@8.6.3",
   "main": "./dist/vue-view-transitions.cjs",
-  "module": "./dist/vue-view-transitions.mjs",
+  "module": "./dist/vue-view-transitions.js",
   "types": "./dist/index.d.ts",
   "type": "module",
   "files": [
@@ -31,7 +31,7 @@
     ".": {
       "types": "./dist/index.d.ts",
       "require": "./dist/vue-view-transitions.cjs",
-      "import": "./dist/vue-view-transitions.mjs"
+      "import": "./dist/vue-view-transitions.js"
     }
   },
   "scripts": {
@@ -45,7 +45,7 @@
     "release": "commit-and-tag-version"
   },
   "peerDependencies": {
-    "vue": "^2.7.14 || ^3.0.0"
+    "vue": "^2.7.0 || ^3.0.0"
   },
   "devDependencies": {
     "@types/jsdom": "^21.1.1",
