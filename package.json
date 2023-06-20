@@ -6,6 +6,7 @@
   "packageManager": "pnpm@8.6.3",
   "main": "./dist/vue-view-transitions.cjs",
   "module": "./dist/vue-view-transitions.mjs",
+  "types": "./dist/index.d.ts",
   "type": "module",
   "files": [
     "dist"
@@ -28,6 +29,7 @@
   "sideEffects": false,
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "require": "./dist/vue-view-transitions.cjs",
       "import": "./dist/vue-view-transitions.mjs"
     }
