@@ -1,3 +1,2 @@
-import "./style.css";
-
-export { sum } from "./sum";
+export { ViewTransitionsPlugin } from './plugin'
+export { startViewTransition } from './transition'
