@@ -1,58 +1,96 @@
-# vite-vanilla-ts-lib-starter
+# vue-view-transitions
 
-The starter is built on top of Vite 4.x and prepared for writing libraries in TypeScript. It generates a hybrid package - both support for CommonJS and ESM modules.
+A simple tool to use View Transition API in Vue
 
-## Features
+## Introduction
+The View Transitions API is an experimental API recently released in Chrome 111+. It provides a convenient way to create animated transitions between different DOM states. `vue-view-transitions` makes it easier to use View Transitions API in Vue. For more information about View Transition API, Please check [Reference](#reference).
 
-- Hybrid support - CommonJS and ESM modules
-- IIFE bundle for direct browser support without bundler
-- Typings bundle
-- ESLint - scripts linter
-- Stylelint - styles linter
-- Prettier - formatter
-- Vitest - test framework
-- Husky + lint-staged - pre-commit git hook set up for formatting
+## Install
 
-## GitHub Template
-
-This is a template repo. Click the green [Use this template](https://github.com/kbysiec/vite-vanilla-ts-lib-starter/generate) button to get started.
-
-## Clone to local
-
-If you prefer to do it manually with the cleaner git history
-
-```bash
-git clone https://github.com/kbysiec/vite-vanilla-ts-lib-starter.git
-cd vite-vanilla-ts-lib-starter
-npm i
+```sh
+npm i vue-view-transitions
 ```
 
-## Checklist
+Or
 
-When you use this template, update the following:
+```sh
+pnpm add vue-view-transitions
+```
 
-- Remove `.git` directory and run `git init` to clean up the history
-- Change the name in `package.json` - it will be the name of the IIFE bundle global variable and bundle files name (`.cjs`, `.mjs`, `.iife.js`, `d.ts`)
-- Change the author name in `LICENSE`
-- Clean up the `README` and `CHANGELOG` files
-
-And, enjoy :)
+```sh
+yarn add vue-view-transitions
+```
 
 ## Usage
 
-The starter contains the following scripts:
+### Use `ViewTransitionsPlugin` to add view transition name easily
 
-- `dev` - starts dev server
-- `build` - generates the following bundles: CommonJS (`.cjs`) ESM (`.mjs`) and IIFE (`.iife.js`). The name of bundle is automatically taken from `package.json` name property
-- `test` - starts vitest and runs all tests
-- `test:coverage` - starts vitest and run all tests with code coverage report
-- `lint:scripts` - lint `.ts` files with eslint
-- `lint:styles` - lint `.css` and `.scss` files with stylelint
-- `format:scripts` - format `.ts`, `.html` and `.json` files with prettier
-- `format:styles` - format `.cs` and `.scss` files with stylelint
-- `format` - format all with prettier and stylelint
-- `prepare` - script for setting up husky pre-commit hook
-- `uninstall-husky` - script for removing husky from repository
+You should use a unique view-transition-name for each element (or element pair).
+
+In `main.ts`
+
+```js
+import { createApp } from 'vue'
+import { ViewTransitionsPlugin } from 'vue-view-transitions'
+import App from './App.vue'
+
+createApp(App).use(ViewTransitionsPlugin())
+```
+
+In App.vue
+
+```html
+<h1 v-view-transition-name="'title'">Title</h1>
+```
+
+It will be rendered to this when mounted:
+
+```html
+<h1 style="view-transition-name: title">Title</h1>
+```
+
+### Use `startViewTransition` to start a new view transition
+
+
+```js
+async function animate() {
+    await startViewTransition()
+    style.value.transform = style.value.transform === '' ? 'translateX(50px)' : ''
+}
+```
+
+Note that you should wait `startViewTransition()` to be fulfilled before making dom updates. Otherwise the browser may capture the wrong snapshot of the document.
+
+### Use `startViewTransition` in vue-router to apply page transitions
+
+```js
+router.beforeResolve(async () => {
+    await startViewTransition()
+    // ...
+})
+```
+
+### `ViewTransition` object
+
+`startViewTransition()` is supposed to fulfilled with a `ViewTransition` object, and provides functionality to react to the transition reaching different states or skip the transition altogether.
+
+- `ViewTransition.finished`: A Promise that fulfills once the transition animation is finished, and the new page view is visible and interactive to the user.
+
+- `ViewTransition.ready`: A Promise that fulfills once the pseudo-element tree is created and the transition animation is about to start.
+
+- `ViewTransition.skipTransition`: Skips the animation part of the view transition.
+
+## Compatibility
+
+`vue-view-transitions` uses View Transitions API under the hood. Currently, View Transitions API is only availble in Chrome 111+. If you need a more compatible solution, use [vue-starport](https://github.com/antfu/vue-starport) or [nuxt transitions](https://nuxt.com/docs/getting-started/transitions).
+
+[Compatibility](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility)
+
+## Reference
+
+[Smooth and simple transitions with the View Transitions API](https://developer.chrome.com/docs/web-platform/view-transitions)
+
+[MDN ViewTransition](https://developer.mozilla.org/en-US/docs/Web/API/ViewTransition)
 
 ## Acknowledgment
 
