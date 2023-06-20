@@ -74,6 +74,9 @@ devDependencies:
   vue:
     specifier: ^3.3.4
     version: 3.3.4
+  vue2:
+    specifier: npm:vue@2.6.14
+    version: /vue@2.6.14
 
 packages:
 
@@ -4388,6 +4391,10 @@ packages:
       semver: 7.5.2
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vue@2.6.14:
+    resolution: {integrity: sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==}
     dev: true
 
   /vue@3.3.4:
