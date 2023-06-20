@@ -1,5 +1,7 @@
 # vue-view-transitions
 
+[![NPM version][npm-image]][npm-url] [![NPM Downloads][npm-download]][npm-url] [![License][license]][license-url] [![Minified Size][minified-size]][npm-url] [![Build Status][build-status]][github-actions]
+
 A simple tool to use View Transition API in Vue
 
 ## Introduction
@@ -106,3 +108,12 @@ Vue.use(ViewTransitionsLegacyPlugin())
 If you found it useful somehow, I would be grateful if you could leave a star in the project's GitHub repository.
 
 Thank you.
+
+[npm-url]: https://www.npmjs.com/package/vue-view-transitions
+[npm-image]: https://badge.fury.io/js/vue-view-transitions.svg
+[npm-download]: https://img.shields.io/npm/dw/vue-view-transitions
+[license]: https://img.shields.io/github/license/Clarkkkk/vue-view-transitions
+[license-url]: https://github.com/Clarkkkk/vue-view-transitions/blob/main/LICENSE.md
+[minified-size]: https://img.shields.io/bundlephobia/min/vue-view-transitions
+[build-status]: https://img.shields.io/github/actions/workflow/status/Clarkkkk/vue-view-transitions/.github%2Fworkflows%2Fpublish.yml
+[github-actions]: https://github.com/Clarkkkk/vue-view-transitions/actions
