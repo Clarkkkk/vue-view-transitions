@@ -1,39 +1,27 @@
 /// <reference types="vitest" />
-import path from "path";
-import { defineConfig } from "vite";
-import packageJson from "./package.json";
+import vue from '@vitejs/plugin-vue'
+import path from 'path'
+import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
-const getPackageName = () => {
-  return packageJson.name;
-};
-
-const getPackageNameCamelCase = () => {
-  try {
-    return getPackageName().replace(/-./g, (char) => char[1].toUpperCase());
-  } catch (err) {
-    throw new Error("Name property in package.json is missing.");
-  }
-};
-
-const fileName = {
-  es: `${getPackageName()}.mjs`,
-  cjs: `${getPackageName()}.cjs`,
-  iife: `${getPackageName()}.iife.js`,
-};
-
-const formats = Object.keys(fileName) as Array<keyof typeof fileName>;
-
-module.exports = defineConfig({
-  base: "./",
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, "src/index.ts"),
-      name: getPackageNameCamelCase(),
-      formats,
-      fileName: (format) => fileName[format],
+export default defineConfig({
+    base: './',
+    build: {
+        lib: {
+            entry: path.resolve(__dirname, 'src/index.ts'),
+            formats: ['cjs', 'es']
+        },
+        rollupOptions: {
+            // 确保外部化处理那些你不想打包进库的依赖
+            external: ['vue'],
+            output: {
+                // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+                globals: {
+                    vue: 'Vue'
+                }
+            }
+        }
     },
-  },
-  test: {
-
-  }
-});
+    plugins: [vue(), dts()],
+    test: {}
+})
