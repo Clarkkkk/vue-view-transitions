@@ -82,6 +82,10 @@ router.beforeResolve(async () => {
 
 - `ViewTransition.skipTransition`: Skips the animation part of the view transition.
 
+## Examples
+
+More examples are available [here](https://stackblitz.com/edit/vue-view-transitions-examples?file=src%2Fmain.ts).
+
 ## Compatibility
 
 ### Vue 2
