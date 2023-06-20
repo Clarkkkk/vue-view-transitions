@@ -40,6 +40,7 @@
     "build": "tsc && vite build",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
+    "typecheck": "tsc --noEmit --watch --preserveWatchOutput",
     "format": "eslint --fix --cache src/**/*.{vue,ts}",
     "prepare": "husky install",
     "uninstall-husky": "npm uninstall husky --no-save && git config --unset core.hooksPath && npx rimraf .husky",

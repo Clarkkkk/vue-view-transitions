@@ -1,5 +1,6 @@
 import type { Plugin } from 'vue'
 import type { PluginObject as LegacyPlugin, VueConstructor as LegacyVue } from 'vue2'
+import type { DirectiveBinding } from 'vue2/types/options'
 
 export function ViewTransitionsPlugin(): Plugin {
     return {
@@ -17,7 +18,7 @@ export function ViewTransitionsLegacyPlugin(): LegacyPlugin<void> {
     return {
         install(Vue: LegacyVue) {
             Vue.directive('view-transition-name', {
-                bind(el, binding) {
+                bind(el: HTMLElement, binding: DirectiveBinding) {
                     // eslint-disable-next-line @typescript-eslint/no-extra-semi
                     ;(el.style as any).viewTransitionName = binding.value
                 }

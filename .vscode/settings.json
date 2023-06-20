@@ -15,5 +15,6 @@
   "vue.autoInsert.parentheses": true,
   "volar.takeOverMode.extension": "Vue.volar",
   "vue.complete.normalizeComponentImportName": false,
-  "editor.formatOnSaveMode": "modificationsIfAvailable"
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
