@@ -1,0 +1,19 @@
+{
+  "editor.tabSize": 4,
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.codeActionsOnSave": {
+    "source.addMissingImports": false,
+    "source.fixAll.eslint": true
+  },
+  "vue.codeActions.enabled": false,
+  "vue.codeLens.enabled": false,
+  "vue-semantic-server.trace.server": "messages",
+  "vue-syntactic-server.trace.server": "messages",
+  "vue.autoInsert.parentheses": true,
+  "volar.takeOverMode.extension": "Vue.volar",
+  "vue.complete.normalizeComponentImportName": false,
+  "editor.formatOnSaveMode": "modificationsIfAvailable"
+}
