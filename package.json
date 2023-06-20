@@ -10,6 +10,14 @@
   "files": [
     "dist"
   ],
+  "homepage": "https://github.com/Clarkkkk/vue-view-transitions#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Clarkkkk/vue-view-transitions"
+  },
+  "bugs": {
+    "url": "https://github.com/Clarkkkk/vue-view-transitions/issues"
+  },
   "keywords": [
     "vue",
     "view transitions",
