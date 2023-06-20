@@ -2,6 +2,7 @@
   "name": "vue-view-transitions",
   "version": "0.1.2",
   "description": "A simple way to use View Transitions API in Vue",
+  "license": "MIT",
   "author": "Aaron Zhou",
   "packageManager": "pnpm@8.6.3",
   "main": "./dist/vue-view-transitions.cjs",
