@@ -6,4 +6,3 @@ pnpm-lock.yaml
 coverage
 dist
 node_modules
-vite.config.ts
