@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.3](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.2.2...v0.2.3) (2023-06-20)
+
+
+### Bug Fixes
+
+* missing export ([29ae7d9](https://github.com/Clarkkkk/vue-view-transitions/commit/29ae7d9a21b46d4a13d165d6b70bd6bdd377937d))
+
+
+
 ## [0.2.2](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.2.1...v0.2.2) (2023-06-20)
 
 
