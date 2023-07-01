@@ -8,6 +8,9 @@ export function ViewTransitionsPlugin(): Plugin {
             app.directive('view-transition-name', {
                 beforeMount(el, binding) {
                     el.style.viewTransitionName = binding.value
+                },
+                beforeUpdate(el, binding) {
+                    el.style.viewTransitionName = binding.value
                 }
             })
         }
@@ -19,6 +22,10 @@ export function ViewTransitionsLegacyPlugin(): LegacyPlugin<void> {
         install(Vue: LegacyVue) {
             Vue.directive('view-transition-name', {
                 bind(el: HTMLElement, binding: DirectiveBinding) {
+                    // eslint-disable-next-line @typescript-eslint/no-extra-semi
+                    ;(el.style as any).viewTransitionName = binding.value
+                },
+                update(el: HTMLElement, binding: DirectiveBinding) {
                     // eslint-disable-next-line @typescript-eslint/no-extra-semi
                     ;(el.style as any).viewTransitionName = binding.value
                 }
