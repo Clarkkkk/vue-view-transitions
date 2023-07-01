@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.2.4](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.2.3...v0.2.4) (2023-07-01)
+
+
+### Bug Fixes
+
+* directive callback should be called in udpate hook ([b3e50e9](https://github.com/Clarkkkk/vue-view-transitions/commit/b3e50e95b36cc417a2aea78f6dab8c90a6b2f35f))
+
+
+
 ## [0.2.3](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.2.2...v0.2.3) (2023-06-20)
 
 
