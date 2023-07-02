@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [0.3.0](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.2.4...v0.3.0) (2023-07-02)
+
+
+### Features
+
+* support passing an object for dynamic toggling ([f80358c](https://github.com/Clarkkkk/vue-view-transitions/commit/f80358cee4d406645e1951c4dda463265d73a8d6))
+
+
+
 ## [0.2.4](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.2.3...v0.2.4) (2023-07-01)
 
 
