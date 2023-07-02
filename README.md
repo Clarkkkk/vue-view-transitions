@@ -51,6 +51,12 @@ It will be rendered to this when mounted:
 <h1 style="view-transition-name: title">Title</h1>
 ```
 
+You can pass an object as well to toggle it dynamically:
+
+```html
+<h1 v-view-transition-name="{ title: someBoolean }">Title</h1>
+```
+
 ### Use `startViewTransition` to start a new view transition
 
 
