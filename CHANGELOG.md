@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.3.1](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.3.0...v0.3.1) (2023-07-23)
+
+
+### Bug Fixes
+
+* fix an error when using object syntax ([0edbb63](https://github.com/Clarkkkk/vue-view-transitions/commit/0edbb63338a3c957705f7acc201978abf02d8103))
+
+
+
 # [0.3.0](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.2.4...v0.3.0) (2023-07-02)
 
 
