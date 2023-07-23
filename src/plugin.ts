@@ -2,15 +2,15 @@ import type { Plugin } from 'vue'
 import type { PluginObject as LegacyPlugin, VueConstructor as LegacyVue } from 'vue2'
 import type { DirectiveBinding } from 'vue2/types/options'
 
-function getViewTransitionName(value: string | Record<string, boolean>) {
+function setViewTransitionName(el: any, value: string | Record<string, boolean>) {
     if (typeof value === 'string') {
-        return value
+        el.style.viewTransitionName = value
     } else {
         const [viewTransitionName, active] = Object.entries(value)?.[0] || {}
         if (active) {
-            return viewTransitionName
+            el.style.viewTransitionName = viewTransitionName
         } else {
-            return undefined
+            el.style.viewTransitionName = 'none'
         }
     }
 }
@@ -20,10 +20,10 @@ export function ViewTransitionsPlugin(): Plugin {
         install(app) {
             app.directive('view-transition-name', {
                 beforeMount(el, binding) {
-                    el.style.viewTransitionName = getViewTransitionName(binding.value)
+                    setViewTransitionName(el, binding.value)
                 },
                 beforeUpdate(el, binding) {
-                    el.style.viewTransitionName = getViewTransitionName(binding.value)
+                    setViewTransitionName(el, binding.value)
                 }
             })
         }
@@ -36,8 +36,7 @@ export function ViewTransitionsLegacyPlugin(): LegacyPlugin<void> {
             Vue.directive(
                 'view-transition-name',
                 function (el: HTMLElement, binding: DirectiveBinding) {
-                    // eslint-disable-next-line @typescript-eslint/no-extra-semi
-                    ;(el.style as any).viewTransitionName = getViewTransitionName(binding.value)
+                    setViewTransitionName(el, binding.value)
                 }
             )
         }
