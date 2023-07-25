@@ -18,13 +18,13 @@ export function startViewTransition(callback?: () => Promise<void>): ViewTransit
                     await callback()
                 }
             })
-            viewTransition.captured = capturedPromise
             viewTransition.updateCallbackDone = nativeViewTransition.updateCallbackDone
             viewTransition.ready = nativeViewTransition.ready
             viewTransition.finished = nativeViewTransition.finished
             viewTransition.skipTransition =
                 nativeViewTransition.skipTransition.bind(nativeViewTransition)
         })
+        viewTransition.captured = capturedPromise
     } else {
         console.error(
             "This browser doesn't support View Transitions Api, please check: https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility"
