@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [1.0.0-beta.2](https://github.com/Clarkkkk/vue-view-transitions/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-07-25)
+
+
+### Bug Fixes
+
+* should not access `capturedPromise` before initialization ([abf2cb9](https://github.com/Clarkkkk/vue-view-transitions/commit/abf2cb971dc5ed6b00b7542058ad02a566ba38e3))
+
+
+
 # [1.0.0-beta.1](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.4.0-beta.1...v1.0.0-beta.1) (2023-07-25)
 
 
