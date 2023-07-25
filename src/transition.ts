@@ -1,22 +1,24 @@
 interface ViewTransition {
+    captured: Promise<void>
     updateCallbackDone: Promise<void>
     ready: Promise<void>
     finished: Promise<void>
     skipTransition: () => void
 }
 
-export async function startViewTransition(callback?: () => Promise<void>): Promise<ViewTransition> {
+export function startViewTransition(callback?: () => Promise<void>): ViewTransition {
     const viewTransition = {} as ViewTransition
     // @ts-expect-error startViewTransition is not existed on document yet
     if (document.startViewTransition) {
-        await new Promise<void>((resolve) => {
+        const capturedPromise = new Promise<void>((resolve) => {
             // @ts-expect-error startViewTransition is not existed on document yet
             const nativeViewTransition = document.startViewTransition(async () => {
+                resolve()
                 if (callback) {
                     await callback()
                 }
-                resolve()
             })
+            viewTransition.captured = capturedPromise
             viewTransition.updateCallbackDone = nativeViewTransition.updateCallbackDone
             viewTransition.ready = nativeViewTransition.ready
             viewTransition.finished = nativeViewTransition.finished
