@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [0.4.0-beta.1](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.3.1...v0.4.0-beta.1) (2023-07-25)
+
+
+### Features
+
+* `startViewTransition` accepts an optional callback ([cf27ddc](https://github.com/Clarkkkk/vue-view-transitions/commit/cf27ddcb277ec5e584ab7e0a6ea5f86fe7a1f99a))
+
+
+
 ## [0.3.1](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.3.0...v0.3.1) (2023-07-23)
 
 

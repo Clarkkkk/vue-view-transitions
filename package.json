@@ -1,6 +1,6 @@
 {
   "name": "vue-view-transitions",
-  "version": "0.3.1",
+  "version": "0.4.0-beta.1",
   "description": "A simple way to use View Transitions API in Vue",
   "license": "MIT",
   "author": "Aaron Zhou",
