@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [1.0.0-beta.1](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.4.0-beta.1...v1.0.0-beta.1) (2023-07-25)
+
+
+### Features
+
+* add `captured` property to `ViewTransition` object ([2648719](https://github.com/Clarkkkk/vue-view-transitions/commit/2648719b11c12abcff277567f13bc2c8940c7eb8))
+
+
+### BREAKING CHANGES
+
+* - `startViewTransition` no longer return a promise.
+    
+    Previous:
+    ```js
+    await startViewTransition()
+    ```
+    Now:
+    ```js
+    const viewTransition = startViewTransition()
+    await viewTransition.captured
+    ```
+
+
+
 # [0.4.0-beta.1](https://github.com/Clarkkkk/vue-view-transitions/compare/v0.3.1...v0.4.0-beta.1) (2023-07-25)
 
 
