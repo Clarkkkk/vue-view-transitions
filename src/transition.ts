@@ -26,6 +26,13 @@ export function startViewTransition(callback?: () => Promise<void>): ViewTransit
         })
         viewTransition.captured = capturedPromise
     } else {
+        viewTransition.captured =
+            viewTransition.updateCallbackDone =
+            viewTransition.ready =
+            viewTransition.finished =
+                Promise.resolve()
+        // eslint-disable-next-line @typescript-eslint/no-empty-function
+        viewTransition.skipTransition = () => {}
         console.error(
             "This browser doesn't support View Transitions Api, please check: https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility"
         )
