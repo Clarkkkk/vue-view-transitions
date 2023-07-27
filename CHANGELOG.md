@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [1.0.0](https://github.com/Clarkkkk/vue-view-transitions/compare/v1.0.0-beta.2...v1.0.0) (2023-07-27)
+
+
+### Bug Fixes
+
+* return `ViewTransition` object with default values when browser does not support view transitions api ([a47d5ad](https://github.com/Clarkkkk/vue-view-transitions/commit/a47d5adebf1b20c45253fe24845a8bcc7e53a8db))
+
+
+
 # [1.0.0-beta.2](https://github.com/Clarkkkk/vue-view-transitions/compare/v1.0.0-beta.1...v1.0.0-beta.2) (2023-07-25)
 
 
