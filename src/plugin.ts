@@ -26,6 +26,15 @@ export function ViewTransitionsPlugin(): Plugin {
                     setViewTransitionName(el, binding.value)
                 }
             })
+
+            app.directive('trans', {
+                beforeMount(el, binding) {
+                    setViewTransitionName(el, binding.value)
+                },
+                beforeUpdate(el, binding) {
+                    setViewTransitionName(el, binding.value)
+                }
+            })
         }
     }
 }
@@ -39,6 +48,10 @@ export function ViewTransitionsLegacyPlugin(): LegacyPlugin<void> {
                     setViewTransitionName(el, binding.value)
                 }
             )
+
+            Vue.directive('trans', function (el: HTMLElement, binding: DirectiveBinding) {
+                setViewTransitionName(el, binding.value)
+            })
         }
     }
 }
