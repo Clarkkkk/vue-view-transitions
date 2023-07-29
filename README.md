@@ -6,7 +6,7 @@ A simple tool to use View Transition API in Vue
 
 ## Introduction
 The View Transitions API is an experimental API recently released in Chrome 111+. It provides a convenient way to create animated transitions between different DOM states. `vue-view-transitions` makes it easier to use View Transitions API in Vue. For more information about View Transition API, Please check [Reference](#reference).
-
+TO DO
 ## Install
 
 ```sh
@@ -62,7 +62,8 @@ You can pass an object as well to toggle it dynamically:
 
 ```js
 async function animate() {
-    await startViewTransition()
+    const viewTransition = startViewTransition()
+    await viewTransition.captured
     style.value.transform = style.value.transform === '' ? 'translateX(50px)' : ''
 }
 ```
@@ -71,22 +72,31 @@ Note that you should wait `startViewTransition()` to be fulfilled before making 
 
 ### Use `startViewTransition` in vue-router to apply page transitions
 
+The code execution order here is a bit puzzling due to the asynchronous nature of both view transitions and routing. The order should be "beforeResolve start" -> "screenshot capture" -> "beforeResolve end" -> "dom change callback" -> "view transition". As you can see, there are two promises: `beforeResolve` waits for the `viewTransition.captured` promise to fulfill, `startViewTransition` waits for the dom change callback to fulfill.
+
 ```js
 router.beforeResolve(async () => {
-    await startViewTransition()
+    const viewTransition = startViewTransition(async () => {
+        // dom changes
+    })
+    await viewTransition.captured
     // ...
 })
 ```
 
 ### `ViewTransition` object
 
-`startViewTransition()` is supposed to fulfilled with a `ViewTransition` object, and provides functionality to react to the transition reaching different states or skip the transition altogether.
+`startViewTransition(callback?)`: return a `ViewTransition` object. The optional callback is supposed to return a promise. When the promise returned by the callback fulfills, the view transition starts. A few properties are used to describe the whole process. They fulfills in a sequential order: `captured` -> `updateCallbackDone` -> `ready` -> `finished`.
 
-- `ViewTransition.finished`: A Promise that fulfills once the transition animation is finished, and the new page view is visible and interactive to the user.
+- `ViewTransition.captured`: A promise that fulfills once user agent finishes capturing a screenshot of the current state
+
+- `ViewTransition.updateCallbackDone`: A promise that fulfills once the promise returned by the callback of `startViewTransition` fulfills
 
 - `ViewTransition.ready`: A Promise that fulfills once the pseudo-element tree is created and the transition animation is about to start.
 
-- `ViewTransition.skipTransition`: Skips the animation part of the view transition.
+- `ViewTransition.finished`: A Promise that fulfills once the transition animation is finished, and the new page view is visible and interactive to the user.
+
+- `ViewTransition.skipTransition()`: A method used to skips the animation part of the view transition.
 
 ## Examples
 
@@ -104,7 +114,24 @@ Vue.use(ViewTransitionsLegacyPlugin())
 ```
 
 ### Browser Compatibility
-`vue-view-transitions` uses View Transitions API under the hood. Currently, View Transitions API is only availble in Chrome 111+. If you need a more compatible solution, use [vue-starport](https://github.com/antfu/vue-starport), or [nuxt transitions](https://nuxt.com/docs/getting-started/transitions) if you are using Nuxt. ([Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility))
+`vue-view-transitions` uses View Transitions API under the hood. Currently, View Transitions API is only availble in Chrome 111+. If running in unsupported browsers, it simply executes the callback of `startViewTransition` (if provided). If you need a more compatible solution, use [vue-starport](https://github.com/antfu/vue-starport), or [nuxt transitions](https://nuxt.com/docs/getting-started/transitions) if you are using Nuxt. ([Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility))
+
+## Migrate from 0.x
+
+`startViewTransition` no longer return a promise.
+
+Previous:
+
+```js
+await startViewTransition()
+```
+
+Now:
+
+```js
+const viewTransition = startViewTransition()
+await viewTransition.captured
+```
 
 
 ## Reference
