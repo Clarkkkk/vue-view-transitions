@@ -26,11 +26,12 @@ export function startViewTransition(callback?: () => Promise<void>): ViewTransit
         })
         viewTransition.captured = capturedPromise
     } else {
-        viewTransition.captured =
-            viewTransition.updateCallbackDone =
+        viewTransition.captured = Promise.resolve()
+        const callbackPromise = callback ? Promise.resolve(callback()) : Promise.resolve()
+        viewTransition.updateCallbackDone =
             viewTransition.ready =
             viewTransition.finished =
-                Promise.resolve()
+                callbackPromise
         // eslint-disable-next-line @typescript-eslint/no-empty-function
         viewTransition.skipTransition = () => {}
         console.error(
