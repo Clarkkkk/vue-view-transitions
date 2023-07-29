@@ -27,7 +27,7 @@ yarn add vue-view-transitions
 
 ### Use `ViewTransitionsPlugin` to add view transition name easily
 
-You should use a unique view-transition-name for each element (or element pair).
+`ViewTransitionsPlugin` provides a directive `v-view-transition-name` (or `v-trans` for short) to apply `view-transition-name` to elments. You should use a unique view-transition-name for each element (or element pair).
 
 In `main.ts`
 
@@ -54,7 +54,7 @@ It will be rendered to this when mounted:
 You can pass an object as well to toggle it dynamically:
 
 ```html
-<h1 v-view-transition-name="{ title: someBoolean }">Title</h1>
+<h1 v-trans="{ title: someBoolean }">Title</h1>
 ```
 
 ### Use `startViewTransition` to start a new view transition
