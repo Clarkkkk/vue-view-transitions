@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [1.1.0](https://github.com/Clarkkkk/vue-view-transitions/compare/v1.0.0...v1.1.0) (2023-07-29)
+
+
+### Bug Fixes
+
+* should execute the callback of `startViewTransition` as well when running in unsupported browsers ([1b19096](https://github.com/Clarkkkk/vue-view-transitions/commit/1b190965becd4c96c8d9d94dbaf0dcef6c305d39))
+
+
+### Features
+
+* provides a shorthand `v-trans` for `v-view-transition-name` ([4bb3f69](https://github.com/Clarkkkk/vue-view-transitions/commit/4bb3f69e91603e57224ffcdcd3468b6c61383fb6))
+
+
+
 # [1.0.0](https://github.com/Clarkkkk/vue-view-transitions/compare/v1.0.0-beta.2...v1.0.0) (2023-07-27)
 
 
