@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
+    "rootDir": "./",
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ESNext", "DOM"],
     "moduleResolution": "Node",
+    "jsx": "react-jsx",
     "strict": true,
     "sourceMap": true,
     "resolveJsonModule": true,
@@ -25,6 +26,9 @@
     "node_modules",
     "test/**",
     ".history/**"
+  ],
+  "extends": [
+    "@vue/tsconfig/tsconfig.json"
   ],
   "references": [
     {
