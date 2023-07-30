@@ -1,3 +1,25 @@
+# Changelog
+
+All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
+
+# 1.1.1    (2023-07-30)
+
+
+## **Bug Fixes**
+
+* fix an error when pass a value of wrong type and improve error message's readability ([839340e1](https://github.com/Clarkkkk/vue-view-transitions/commit/839340e102c9275622d6fd8805dd8b8392fb48bc))
+
+## **Test**
+
+* add tests for the plugin ([cd26c711](https://github.com/Clarkkkk/vue-view-transitions/commit/cd26c7114c93a9c6e1db2d418c38d0cd8d1603f7))
+
+## **Chores**
+
+* use aaron-preset to regenerate the whole CHANGELOG.md ([323cf1c3](https://github.com/Clarkkkk/vue-view-transitions/commit/323cf1c3a7cf0318d16abe2b35abac9fe76769d5))
+* update README and keywords ([1a6ce423](https://github.com/Clarkkkk/vue-view-transitions/commit/1a6ce42328f25c1563d735b0391861bea44c2239))
+
+
+
 # 1.1.0    (2023-07-29)
 
 
@@ -198,6 +220,3 @@
 * vscode settings ([6f2760b0](https://github.com/Clarkkkk/vue-view-transitions/commit/6f2760b0224190eb6faeaf011aea5d1dbc7d8816))
 * configure lint and format tools ([fa504f90](https://github.com/Clarkkkk/vue-view-transitions/commit/fa504f908dccf056583881f1da2093a85de7ac11))
 * update package.json and install deps ([60e7d6c2](https://github.com/Clarkkkk/vue-view-transitions/commit/60e7d6c22b0c7c3a99b8e080f445d7957ace9fa9))
-
-
-
