@@ -46,6 +46,7 @@
     "format": "eslint --fix --cache src/**/*.{vue,ts}",
     "prepare": "husky install",
     "uninstall-husky": "npm uninstall husky --no-save && git config --unset core.hooksPath && npx rimraf .husky",
+    "changelog": "conventional-changelog -o CHANGELOG.md -p aaron-preset -r 0",
     "release": "commit-and-tag-version"
   },
   "peerDependencies": {
@@ -61,6 +62,9 @@
     "@vue/test-utils": "^2.4.1",
     "@vue/tsconfig": "^0.4.0",
     "commit-and-tag-version": "^11.2.2",
+    "conventional-changelog": "^4.0.0",
+    "conventional-changelog-aaron-preset": "^0.2.2",
+    "conventional-changelog-cli": "^3.0.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.1.0",
