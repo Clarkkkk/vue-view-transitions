@@ -22,9 +22,11 @@
   },
   "keywords": [
     "vue",
+    "transition",
+    "view transition",
     "view transitions",
     "view transitions api",
-    "vue view transitions api",
+    "page transition",
     "page transitions"
   ],
   "sideEffects": false,

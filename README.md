@@ -6,7 +6,7 @@ A simple tool to use View Transition API in Vue
 
 ## Introduction
 The View Transitions API is an experimental API recently released in Chrome 111+. It provides a convenient way to create animated transitions between different DOM states. `vue-view-transitions` makes it easier to use View Transitions API in Vue. For more information about View Transition API, Please check [Reference](#reference).
-TO DO
+
 ## Install
 
 ```sh
@@ -51,7 +51,7 @@ It will be rendered to this when mounted:
 <h1 style="view-transition-name: title">Title</h1>
 ```
 
-You can pass an object as well to toggle it dynamically:
+You can use object syntax to toggle it dynamically:
 
 ```html
 <h1 v-trans="{ title: someBoolean }">Title</h1>
@@ -68,11 +68,11 @@ async function animate() {
 }
 ```
 
-Note that you should wait `startViewTransition()` to be fulfilled before making dom updates. Otherwise the browser may capture the wrong snapshot of the document.
+Note that you should wait `viewTransition.captured` to be fulfilled before making dom updates. Otherwise the dom change may finish before the browser can capture the snapshot of current state and results in no transitions at all.
 
 ### Use `startViewTransition` in vue-router to apply page transitions
 
-The code execution order here is a bit puzzling due to the asynchronous nature of both view transitions and routing. The order should be "beforeResolve start" -> "screenshot capture" -> "beforeResolve end" -> "dom change callback" -> "view transition". As you can see, there are two promises: `beforeResolve` waits for the `viewTransition.captured` promise to fulfill, `startViewTransition` waits for the dom change callback to fulfill.
+The code execution order here is a bit puzzling due to the asynchronous nature of both view transitions and routing. The order should be "beforeResolve start" -> "capture screenshot of current state" -> "beforeResolve end" -> "dom change callback" -> "view transition". As you can see, there are two promises: `beforeResolve` waits for the `viewTransition.captured` promise to fulfill, `startViewTransition` waits for the dom change callback to fulfill.
 
 ```js
 router.beforeResolve(async () => {
@@ -133,6 +133,9 @@ const viewTransition = startViewTransition()
 await viewTransition.captured
 ```
 
+## Changelog
+
+See [CHANGELOG](https://github.com/Clarkkkk/vue-view-transitions/blob/main/CHANGELOG.md)
 
 ## Reference
 
