@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# 1.2.0    (2023-10-11)
+
+
+## **Features**
+
+* support nuxt as a nuxt module `vue-view-transitions/nuxt` ([f298e0e0](https://github.com/Clarkkkk/vue-view-transitions/commit/f298e0e03a93058a763937ef5190855da2c3eb30))
+
+## **Documentation**
+
+* update README ([5a3ffe35](https://github.com/Clarkkkk/vue-view-transitions/commit/5a3ffe35e3e517e5934565a6383d81967e95be97))
+* typo ([5fd98da8](https://github.com/Clarkkkk/vue-view-transitions/commit/5fd98da8f2ebfbff363fef554cae297cf9814a27))
+
+
+
 # 1.1.1    (2023-07-30)
 
 
