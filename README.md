@@ -98,6 +98,23 @@ router.beforeResolve(async () => {
 
 - `ViewTransition.skipTransition()`: A method used to skips the animation part of the view transition.
 
+### Use in Nuxt
+
+Nuxt ships with an experimental support for the native View Transitions API [since 3.4.0](https://github.com/nuxt/nuxt/discussions/20208). `vue-view-transitions` provides a nuxt module for nuxt users. Here is how to enable it:
+
+```js
+export default defineNuxtConfig({
+    modules: [
+        'vue-view-transitions/nuxt'
+    ],
+    experimental: {
+        viewTransition: true
+    }
+})
+```
+
+Done. Now it's able to use page transitions with the `v-trans` directive during page routing without any extra work thanks to the nuxt intergration. As for the manual triggered transitions, it works the same as described above.
+
 ## Examples
 
 More examples are available [here](https://stackblitz.com/edit/vue-view-transitions-examples?file=src%2Fmain.ts).
