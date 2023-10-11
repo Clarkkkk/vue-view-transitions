@@ -114,7 +114,7 @@ Vue.use(ViewTransitionsLegacyPlugin())
 ```
 
 ### Browser Compatibility
-`vue-view-transitions` uses View Transitions API under the hood. Currently, View Transitions API is only availble in Chrome 111+. If running in unsupported browsers, it simply executes the callback of `startViewTransition` (if provided). If you need a more compatible solution, use [vue-starport](https://github.com/antfu/vue-starport), or [nuxt transitions](https://nuxt.com/docs/getting-started/transitions) if you are using Nuxt. ([Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility))
+`vue-view-transitions` uses View Transitions API under the hood. Currently, View Transitions API is only available in Chrome 111+. If running in unsupported browsers, it simply executes the callback of `startViewTransition` (if provided). If you need a more compatible solution, use [vue-starport](https://github.com/antfu/vue-starport), or [nuxt transitions](https://nuxt.com/docs/getting-started/transitions) if you are using Nuxt. ([Browser compatibility](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API#browser_compatibility))
 
 ## Migrate from 0.x
 
