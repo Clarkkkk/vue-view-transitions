@@ -5,9 +5,9 @@
   "license": "MIT",
   "author": "Aaron Zhou",
   "packageManager": "pnpm@8.6.3",
-  "main": "./dist/vue-view-transitions.cjs",
-  "module": "./dist/vue-view-transitions.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/src/index.d.ts",
   "type": "module",
   "files": [
     "dist"
@@ -32,9 +32,14 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "require": "./dist/vue-view-transitions.cjs",
-      "import": "./dist/vue-view-transitions.js"
+      "types": "./dist/src/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    },
+    "./nuxt": {
+      "types": "./dist/nuxt/index.d.ts",
+      "require": "./dist/nuxt.cjs",
+      "import": "./dist/nuxt.js"
     }
   },
   "scripts": {
@@ -45,14 +50,20 @@
     "typecheck": "tsc --noEmit --watch --preserveWatchOutput",
     "format": "eslint --fix --cache src/**/*.{vue,ts}",
     "prepare": "husky install",
+    "postinstall": "nuxt prepare",
     "uninstall-husky": "npm uninstall husky --no-save && git config --unset core.hooksPath && npx rimraf .husky",
     "changelog": "conventional-changelog -o CHANGELOG.md -p aaron-preset -r 0",
     "release": "commit-and-tag-version"
   },
   "peerDependencies": {
-    "vue": "^2.6 || ^3.0.0"
+    "vue": "^2.6 || ^3.0.0",
+    "nuxt": "^3.0.0"
+  },
+  "dependencies": {
+    "@nuxt/kit": "^3.7.4"
   },
   "devDependencies": {
+    "@nuxt/schema": "^3.7.4",
     "@types/jsdom": "^21.1.1",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^5.59.11",
@@ -77,10 +88,11 @@
     "lint-staged": "^13.2.2",
     "postcss": "^8.4.24",
     "prettier": "^2.8.8",
+    "rollup-plugin-node-externals": "^6.1.2",
     "ts-node": "^10.9.1",
-    "typescript": "^5.1.3",
+    "typescript": "^5.2.2",
     "vite": "^4.3.9",
-    "vite-plugin-dts": "^2.3.0",
+    "vite-plugin-dts": "^3.6.0",
     "vitest": "^0.32.2",
     "vue": "^3.3.4",
     "vue2": "npm:vue@2.6.14"

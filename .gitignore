@@ -13,6 +13,7 @@ dist-ssr
 *.local
 coverage
 .eslintcache
+.nuxt
 
 # Editor directories and files
 .history/*

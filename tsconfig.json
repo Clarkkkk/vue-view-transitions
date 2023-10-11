@@ -16,7 +16,10 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["vite/client", "node"]
+    "types": [
+      "vite/client",
+      "node"
+    ]
   },
   "include": [
     "src"
@@ -28,7 +31,8 @@
     ".history/**"
   ],
   "extends": [
-    "@vue/tsconfig/tsconfig.json"
+    "@vue/tsconfig/tsconfig.json",
+    "./.nuxt/tsconfig.json"
   ],
   "references": [
     {
