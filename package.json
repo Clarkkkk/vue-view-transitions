@@ -9,9 +9,7 @@
   "module": "./dist/index.js",
   "types": "./dist/src/index.d.ts",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "homepage": "https://github.com/Clarkkkk/vue-view-transitions#readme",
   "repository": {
     "type": "git",
@@ -50,7 +48,6 @@
     "typecheck": "tsc --noEmit --watch --preserveWatchOutput",
     "format": "eslint --fix --cache src/**/*.{vue,ts}",
     "prepare": "husky install",
-    "postinstall": "nuxt prepare",
     "uninstall-husky": "npm uninstall husky --no-save && git config --unset core.hooksPath && npx rimraf .husky",
     "changelog": "conventional-changelog -o CHANGELOG.md -p aaron-preset -r 0",
     "release": "commit-and-tag-version"
@@ -58,6 +55,11 @@
   "peerDependencies": {
     "vue": "^2.6 || ^3.0.0",
     "nuxt": "^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "nuxt": {
+      "optional": true
+    }
   },
   "dependencies": {
     "@nuxt/kit": "^3.7.4"

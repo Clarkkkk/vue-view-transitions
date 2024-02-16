@@ -5,8 +5,8 @@
     "*.css": "tailwindcss"
   },
   "editor.codeActionsOnSave": {
-    "source.addMissingImports": false,
-    "source.fixAll.eslint": true
+    "source.addMissingImports": "never",
+    "source.fixAll.eslint": "explicit"
   },
   "vue.codeActions.enabled": false,
   "vue.codeLens.enabled": false,
