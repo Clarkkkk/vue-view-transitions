@@ -31,8 +31,7 @@
     ".history/**"
   ],
   "extends": [
-    "@vue/tsconfig/tsconfig.json",
-    "./.nuxt/tsconfig.json"
+    "@vue/tsconfig/tsconfig.json"
   ],
   "references": [
     {
