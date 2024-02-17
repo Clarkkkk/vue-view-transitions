@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# 1.2.1    (2024-02-17)
+
+
+## **Bug Fixes**
+
+* fix errors in tsconfg.json ([85e04282](https://github.com/Clarkkkk/vue-view-transitions/commit/85e0428294cf55f2c650fc9240118bd7fbd3c2f0))
+* make nuxt as optional dependency (#1) ([6c60b93a](https://github.com/Clarkkkk/vue-view-transitions/commit/6c60b93a4deffcac0abf0336e08cdaf492314c67))
+
+## **Chores**
+
+* update conventional-changelog-aaron-preset ([5b6b7379](https://github.com/Clarkkkk/vue-view-transitions/commit/5b6b73797ac5789bbd2562d7306c3c430902abd8))
+
+
+
 # 1.2.0    (2023-10-11)
 
 
