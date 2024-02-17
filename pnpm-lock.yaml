@@ -47,8 +47,8 @@ devDependencies:
     specifier: ^4.0.0
     version: 4.0.0
   conventional-changelog-aaron-preset:
-    specifier: ^0.2.2
-    version: 0.2.2
+    specifier: ^0.2.3
+    version: 0.2.3
   conventional-changelog-cli:
     specifier: ^3.0.0
     version: 3.0.0
@@ -3011,8 +3011,8 @@ packages:
     resolution: {integrity: sha512-ty/fTekppD2fIwRvnZAVdeOiGd1c7YXEixbgJTNzqcxJWKQnjJ/V1bNEEE6hygpM3WjwHFUVK6HTjWSzV4a8sQ==}
     dev: false
 
-  /conventional-changelog-aaron-preset@0.2.2:
-    resolution: {integrity: sha512-VL1KC7PtO8T+eQXsqDN5T5NEvPng3BDpPBDZpVW7MOSGdHJHVWH/vF3dvCW4PKHdBXbYYgMIhFkj4kz7GWGewg==}
+  /conventional-changelog-aaron-preset@0.2.3:
+    resolution: {integrity: sha512-SCkk8QJ2dUaXWgMXMaGEYiOazfJm+3R9aefAyA61HYsLwa18EwzaFfQ6ZNkNU1J89hBOhwiZYEMs+TT6iBPJVA==}
     engines: {node: '>=14'}
     dev: true
 
@@ -8501,6 +8501,7 @@ packages:
 
   /vue@2.6.14:
     resolution: {integrity: sha512-x2284lgYvjOMj3Za7kqzRcUSxBboHqtgRE2zlos1qWaOye5yUmHn42LB1250NJBLRwEcdrB0JRwyPTEPhfQjiQ==}
+    deprecated: Vue 2 has reached EOL and is no longer actively maintained. See https://v2.vuejs.org/eol/ for more details.
     dev: true
 
   /vue@3.3.4:

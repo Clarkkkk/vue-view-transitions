@@ -9,7 +9,9 @@
   "module": "./dist/index.js",
   "types": "./dist/src/index.d.ts",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "homepage": "https://github.com/Clarkkkk/vue-view-transitions#readme",
   "repository": {
     "type": "git",
@@ -53,8 +55,8 @@
     "release": "commit-and-tag-version"
   },
   "peerDependencies": {
-    "vue": "^2.6 || ^3.0.0",
-    "nuxt": "^3.0.0"
+    "nuxt": "^3.0.0",
+    "vue": "^2.6 || ^3.0.0"
   },
   "peerDependenciesMeta": {
     "nuxt": {
@@ -76,7 +78,7 @@
     "@vue/tsconfig": "^0.4.0",
     "commit-and-tag-version": "^11.2.2",
     "conventional-changelog": "^4.0.0",
-    "conventional-changelog-aaron-preset": "^0.2.2",
+    "conventional-changelog-aaron-preset": "^0.2.3",
     "conventional-changelog-cli": "^3.0.0",
     "eslint": "^8.42.0",
     "eslint-config-prettier": "^8.8.0",
